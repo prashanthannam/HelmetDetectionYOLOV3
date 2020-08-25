@@ -2,6 +2,10 @@
 
 <h2>Detecting Helmet Violators in Traffic using YOLO and OCR</h2>
 
-Project description: The system aims at detecting riders without helmet along with their number plates from traffic footage to extract Registration number.
+Project description: The system aims at detecting riders without helmet along with their number plates from traffic footage to extract Registration number. 
+
+It tries to detect all the bikes in the image and segragates them into non-helmet bikes and helmet-bikes using the trained model. If there is no helmet, the number plate of the bike is cropped and sent to OCR where the registration number will be extracted and displayed on the screen.
+
+For implementin this project we used YOLOv3(You only look once is a state-of-the-art, real-time object detection system) for the backend Machine Learning part and the UI is built using Django.
 
 <img src="Helmet_Detection.gif" width="900">
