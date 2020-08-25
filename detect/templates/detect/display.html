@@ -1,0 +1,61 @@
+{% load static %} {% comment %} {% load media %} {% endcomment %}
+<html>
+
+<head>
+    <style>
+        .jumbotron {
+            height: 150px;
+            width: 600px;
+            margin-left: 400px;
+        }
+        
+        h4 {
+            padding: 0px;
+        }
+        
+        #logout,
+        #signup,
+        #login {
+            margin-left: 1080px;
+        }
+        
+        .navbar-brand {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="padding-top: 70px">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="detect/templates/detect/index.html">Helmet Detection</a>
+        
+        </ul>
+        {% if user.is_authenticated %} {% comment %} <span class="breadcrumb">{{user_name}}</span> {% endcomment %}
+
+        <form class="form-inline my-2 my-lg-0" id='logout' action="{% url 'accounts:logout' %}" method='POST'>{% csrf_token %}
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+        {% else %}
+        <form class="form-inline my-2 my-lg-0" id="login" action="{% url 'accounts:login' %}" method='GET'>{% csrf_token %}
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>&nbsp
+        <form class="form-inline my-2 my-lg-0" id='signup' action="{% url 'accounts:signup' %}" method='GET'>{% csrf_token %}
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign UP</button>
+        </form>
+        {% endif %}
+
+        </div>
+    </nav>
+    {% if url %} {% comment %} <img style="width:500px" src={{ url }} class="img-fluid" alt="Placeholder image"> {% endcomment %}
+    <img style="width:500px" src='/media/frame.png' class="img-fluid" alt="Placeholder image">
+    <br><br>
+    <h5>---------------------------------------Detected plates----------------------------------------</h5>
+    <br> {% for plate in p_list %}
+    <img style="width:200px" src={{ plate }} class="img-fluid" alt="Placeholder image"> {% endfor %} {% endif %}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    {% if data%} {{data}} {% endif %}
+</body>
+
+</html>

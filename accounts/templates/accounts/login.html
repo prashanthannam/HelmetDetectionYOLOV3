@@ -1,0 +1,60 @@
+{% load static %} {% comment %} {% load media %} {% endcomment %}
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url({% static 'images/b2.jpg' %});
+            background-size: cover;
+        }
+        
+        .jumbotron {
+            width: 350px;
+        }
+        
+        .disp {
+            margin-left: 0px;
+            font-family: 'Times New Roman', Times, serif;
+            font-variant: small-caps;
+        }
+        
+        .site-form label {
+            position: absolute;
+            right: 10px;
+        }
+        
+        .disp1 {
+            margin-left: 0px;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="padding-top: 70px">
+    <center>
+        <div class="container">
+            <div class="jumbotron">
+                <h2 class="disp">Helemt Detection</h2>
+                <hr class="my-4">
+                <h4 class="disp1">Login</h4>
+                <br>
+                <form class="form my-2 my-lg-0" action="{% url 'accounts:login' %}" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        {{form}}
+                    </div>
+                    <br>
+                    <input type='submit' class="btn btn-primary btn-md" role="button" value="LOGIN">
+                </form>
+                <br><br>
+                <a href="{% url 'accounts:signup' %}">don't have an account? SignUp</a>
+            </div>
+        </div>
+
+
+    </center>
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>

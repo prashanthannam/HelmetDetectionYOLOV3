@@ -1,0 +1,103 @@
+{% load static %} {% comment %} {% load media %} {% endcomment %}
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url({% static 'images/b2.jpg' %});
+            background-size: cover;
+        }
+        
+        .jumbotron {
+            width: 600px;
+            margin-left: 250px;
+        }
+        
+        .site-form {
+            align-content: center;
+            padding-left: 20px;
+            border: 2px solid #1010
+        }
+        
+        .site-form input {
+            display: flex;
+            border-radius: 5px;
+            margin-left: 130px;
+        }
+        
+        .site-form input[type='submit'] {
+            margin-left: 180px;
+        }
+        
+        .helptext {
+            font-size: 0.7rem;
+            margin-left: 100px;
+            padding: 0%;
+        }
+        
+        .helptext li {
+            list-style-type: none;
+        }
+        
+        .site-form label {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-left: 50px;
+            font-size: medium;
+        }
+        
+        .disp {
+            margin-left: 140px;
+            font-family: 'Times New Roman', Times, serif;
+            font-variant: small-caps;
+        }
+        
+        .disp1 {
+            margin-left: 220px;
+        }
+        
+        h4 {
+            margin-left: 220px;
+            color: darkgrey;
+        }
+        
+        .site-form .errorlist li {
+            padding: 4px;
+            font-size: 0.8rem;
+            list-style-type: none;
+            border: 1px solid #ff5722;
+            color: #ff5722;
+            margin: 10px 0;
+        }
+        
+        a {
+            margin-left: 130px;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="padding-top: 30px">
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="disp">Helemt Detection</h2>
+            <hr class="my-4">
+            <h5 class="disp1">Sign Up</h5>
+
+            <form class="site-form" action="{% url 'accounts:signup' %}" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    {{form}}
+                </div>
+
+                <input type='submit' class="btn btn-primary btn-md" role="button" value="Sign Up">
+            </form>
+            <a href="{% url 'accounts:login' %}">already have an account? Login</a>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
