@@ -6,6 +6,6 @@ Project description: The system aims at detecting riders without helmet along wi
 
 It tries to detect all the bikes in the image and segragates them into non-helmet bikes and helmet-bikes using the trained model. If there is no helmet, the number plate of the bike is cropped and sent to OCR where the registration number will be extracted and displayed on the screen.
 
-For implementin this project we used YOLOv3(You only look once is a state-of-the-art, real-time object detection system) for the backend Machine Learning part and the UI is built using Django.
+For implementing this project we used YOLOv3(3rd version of You only look once which is a real-time object detection system) for the backend Machine Learning part and the UI is built using Django.
 
 <img src="Helmet_Detection.gif" width="900">
