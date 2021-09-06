@@ -8,7 +8,7 @@ It tries to detect all the bikes in the image and segragates them into non-helme
 
 For implementing this project we used YOLOv3(3rd version of You only look once which is a real-time object detection system) for the backend Machine Learning part and the UI is built using Django.
 
-<a href="http://ec2-18-191-242-212.us-east-2.compute.amazonaws.com/detect/helmetview/">Website Link</a>
+<!-- <a href="http://ec2-18-191-242-212.us-east-2.compute.amazonaws.com/detect/helmetview/">Website Link</a>
 <p>Demo Credentials:</p>
-<ul><li>Username : Demo1</li><li>Password: Password@123</li></ul>
+<ul><li>Username : Demo1</li><li>Password: Password@123</li></ul> -->
 <img src="Helmet_Detection.gif" width="900">
